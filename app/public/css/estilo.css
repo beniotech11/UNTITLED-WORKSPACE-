@@ -1,0 +1,193 @@
+CSS
+ 
+
+
+body {
+
+    font-size: 1.1em;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    background-color: #f4f6f8;
+
+    color: #222;
+
+    margin: 0;
+
+    padding: 30px 15px;
+
+}
+ 
+.container {
+
+    max-width: 600px;
+
+    margin: 0 auto;
+
+    padding: 25px;
+
+    background-color: white;
+
+    border-radius: 12px;
+
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+
+}
+ 
+h1 {
+
+    text-align: center;
+
+}
+ 
+.campo {
+
+    margin-bottom: 18px;
+
+}
+ 
+label {
+
+    display: block;
+
+    margin-bottom: 7px;
+
+    font-weight: bold;
+
+}
+ 
+input,
+
+textarea {
+
+    display: block;
+
+    width: 100%;
+
+    padding: 10px;
+
+    border: 1px solid #bbb;
+
+    border-radius: 5px;
+
+    box-sizing: border-box;
+
+    font: inherit;
+
+}
+ 
+textarea {
+
+    resize: vertical;
+
+}
+ 
+input:focus,
+
+textarea:focus {
+
+    outline: 2px solid #8ab8ff;
+
+    border-color: #286bd6;
+
+}
+ 
+.erro {
+
+    background-color: rgb(251, 223, 223);
+
+    border: 2px solid red;
+
+}
+ 
+.msg-erro {
+
+    display: block;
+
+    color: #c00;
+
+    margin-top: 5px;
+
+    font-size: 0.9em;
+
+}
+ 
+button {
+
+    width: 100%;
+
+    padding: 12px;
+
+    border: none;
+
+    border-radius: 5px;
+
+    background-color: #1769aa;
+
+    color: white;
+
+    font-size: 1em;
+
+    cursor: pointer;
+
+}
+ 
+button:hover {
+
+    background-color: #0d4f85;
+
+}
+ 
+.aviso {
+
+    margin: 15px 0;
+
+    padding: 12px;
+
+    border-radius: 5px;
+
+}
+ 
+.sucesso {
+
+    background-color: #e1f5e5;
+
+    color: #176b2c;
+
+    border: 1px solid #74c686;
+
+}
+ 
+.erro {
+
+    background-color: rgb(251, 223, 223);
+
+    border: 2px solid red;
+
+}
+ 
+.aviso.erro {
+
+    background-color: #fbe0e0;
+
+    color: #a00;
+
+}
+ 
+@media (max-width: 480px) {
+
+    body {
+
+        padding: 15px 10px;
+
+    }
+ 
+    .container {
+
+        padding: 18px;
+
+    }
+
+}
+
+ 

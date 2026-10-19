@@ -1,0 +1,179 @@
+INDEX.EJS
+ 
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+ 
+    <link rel="stylesheet" href="/css/estilo.css">
+ 
+    <title>Formulário de Contato</title>
+</head>
+<body>
+ 
+    <main class="container">
+<h1>Formulário de Contato</h1>
+<p>Preencha os campos abaixo para entrar em contato.</p>
+ 
+        <% 
+
+            const campos = ["nome", "email", "telefone", "assunto", "mensagem"];
+
+            const mensagensErro = {};
+ 
+            campos.forEach(function(campo) {
+
+                mensagensErro[campo] = "";
+
+            });
+ 
+            erros.forEach(function(erro) {
+
+                if (campos.includes(erro.path) && !mensagensErro[erro.path]) {
+
+                    mensagensErro[erro.path] = erro.msg;
+
+                }
+
+            });
+
+        %>
+ 
+        <% if (mensagem) { %>
+<div class="aviso <%= tipoMensagem %>" role="status">
+<%= mensagem %>
+</div>
+<% } %>
+ 
+        <form action="/index" method="POST">
+ 
+            <div class="campo">
+<label for="nome">Nome:</label>
+<input
+
+                    type="text"
+
+                    name="nome"
+
+                    id="nome"
+
+                    value="<%= valores.nome || '' %>"
+
+                    class="<%= mensagensErro.nome ? 'erro' : '' %>"
+
+                    minlength="3"
+
+                    maxlength="30"
+
+                    required
+>
+<% if (mensagensErro.nome) { %>
+<span class="msg-erro"><%= mensagensErro.nome %></span>
+<% } %>
+</div>
+ 
+            <div class="campo">
+<label for="email">E-mail:</label>
+<input
+
+                    type="email"
+
+                    name="email"
+
+                    id="email"
+
+                    value="<%= valores.email || '' %>"
+
+                    class="<%= mensagensErro.email ? 'erro' : '' %>"
+
+                    required
+>
+<% if (mensagensErro.email) { %>
+<span class="msg-erro"><%= mensagensErro.email %></span>
+<% } %>
+</div>
+ 
+            <div class="campo">
+<label for="telefone">Telefone:</label>
+<input
+
+                    type="tel"
+
+                    name="telefone"
+
+                    id="telefone"
+
+                    value="<%= valores.telefone || '' %>"
+
+                    class="<%= mensagensErro.telefone ? 'erro' : '' %>"
+
+                    minlength="8"
+
+                    maxlength="20"
+
+                    required
+>
+<% if (mensagensErro.telefone) { %>
+<span class="msg-erro"><%= mensagensErro.telefone %></span>
+<% } %>
+</div>
+ 
+            <div class="campo">
+<label for="assunto">Assunto:</label>
+<input
+
+                    type="text"
+
+                    name="assunto"
+
+                    id="assunto"
+
+                    value="<%= valores.assunto || '' %>"
+
+                    class="<%= mensagensErro.assunto ? 'erro' : '' %>"
+
+                    minlength="3"
+
+                    maxlength="100"
+
+                    required
+>
+<% if (mensagensErro.assunto) { %>
+<span class="msg-erro"><%= mensagensErro.assunto %></span>
+<% } %>
+</div>
+ 
+            <div class="campo">
+<label for="mensagem">Mensagem:</label>
+<textarea
+
+                    name="mensagem"
+
+                    id="mensagem"
+
+                    class="<%= mensagensErro.mensagem ? 'erro' : '' %>"
+
+                    minlength="5"
+
+                    maxlength="5000"
+
+                    rows="6"
+
+                    required
+><%= valores.mensagem || '' %></textarea>
+<% if (mensagensErro.mensagem) { %>
+<span class="msg-erro"><%= mensagensErro.mensagem %></span>
+<% } %>
+</div>
+ 
+            <button type="submit">Enviar mensagem</button>
+ 
+        </form>
+</main>
+ 
+</body>
+</html>
+
+ 
